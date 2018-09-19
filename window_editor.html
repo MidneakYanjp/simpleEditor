@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑器</title>
+    <link rel="stylesheet" href="css/window_editor.css">
+</head>
+<body>
+<div class="phone-editor">
+    <div class="view">
+        <div class="title">
+            <span>请输入标题(15字)</span><input data-content="title" maxlength="15" type="text">
+        </div>
+        <div class="author">
+            <span>请输入作者(8字)</span><input data-content="author" type="text" maxlength="8">
+        </div>
+        <div class="content">
+            <div class="editor-tool">
+                <div class="tool-one">
+                    <input type=button value=全选 onclick=document.execCommand('SelectAll')>
+                    <input type=button value=剪切 onclick=document.execCommand('Cut')>
+                    <input type=button value=拷贝 onclick=document.execCommand('Copy')>
+                    <input type=button value=删除 onclick=document.execCommand('Delete')>
+                    <input type=button value=撤消 onclick=document.execCommand('Undo')>
+                    <input type=button value=重做 onclick=document.execCommand('Redo')>
+                    <input type=button value=加粗 onclick=document.execCommand('bold')>
+                    <input type=button value=斜体 onclick=document.execCommand('Italic')>
+                    <input type=button value=下划线 onclick=document.execCommand('Underline')>
+                    <div class="ima-upload">
+                        <input data-function="link-image" type="file" value="插入图片" accept="image/*">
+                        <input value="插入图片" type="text" class="cover-file">
+                    </div>
+                    <div class="video-upload">
+                        <input data-function="link-video" type="file" value="插入视频" accept="audio/*">
+                        <input value="上传视频" type="text" class="cover-file">
+                    </div>
+                    <input data-function="link" type="button" value="设为超链接">
+                    <input type=button value=取消选中链接 onclick=document.execCommand('unlink')>
+                    <span>字体颜色</span><input data-function="fontColor" type=color>
+                    <span>背景颜色</span><input data-function="bgColor" type=color>
+                    <input type="button" value="水平线" onclick=document.execCommand("InsertHorizontalRule")>
+                    <span>字号</span>
+                    <select name="" class="font-size">
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="" selected>3</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">6</option>
+                        <option value="">7</option>
+                    </select>
+                    <input type=button value=设为下标 onclick=document.execCommand("SubScript")>
+                    <input type=button value=设为上标 onclick=document.execCommand("SuperScript")>
+                    <input type=button value=前缩进 onclick=document.execCommand("Outdent")>
+                    <input type=button value=后缩进 onclick=document.execCommand("Indent")>
+                    <input type=button value=左对齐 onclick=document.execCommand("JustifyLeft")>
+                    <input type=button value=居中 onclick=document.execCommand("JustifyCenter")>
+                    <input type=button value=右对齐 onclick=document.execCommand("JustifyRight")>
+                    <input type="button" value="样式刷新" onclick=document.execCommand("InsertFieldset")>
+                    <!--<input class="emotion" type="button" value="表情">-->
+                </div>
+            </div>
+            <div id="textarea" class="content-content" contenteditable="true" >   <!--可编辑的div-->
+                <div class="note">从这里开始写正文</div>
+                <div><br></div>
+            </div>
+        </div>
+        <div class="operation">
+            <button class="preview-btn">预览</button>
+            <button>直接发送</button>
+        </div>
+        <div class="conditions">
+            <p>
+                <span>是否允许评论</span> <input type="checkbox" name="say">
+            </p>
+        </div>
+        <div class="image-upload none">
+            <!--<img class="close-insert-picture" src="image/img_close.png" alt="">-->
+            <ul class='carouselbox'>
+
+            </ul>
+            <div class='upload_footer'>
+                <input type="button" value='添加' id="carouselplus" class="preview_btn" >&nbsp;
+                <input type="button" value='插入' id="carouselsubmit" class="preview_btn" >&nbsp;
+                <input type="button" value='取消' id="carouselno" class="preview_btn" >
+            </div>
+        </div>
+        <div class="bg_black none">
+            <div class="Mobile none">
+                <div class="phone-view">
+                    <div class="phoneTitle">
+                        <span></span>
+                    </div>
+                    <p class="public">
+                        <a data-phone="publicName">XXX-title</a>
+                        <span data-phone="releaseTime">XXX-time</span>
+                    </p>
+                    <div class="main-content">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/layer/layer.js"></script>
+<script src="js/window_editor.js"></script>
+</body>
+</html>
